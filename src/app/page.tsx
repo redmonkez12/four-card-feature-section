@@ -1,91 +1,47 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import { Poppins } from 'next/font/google'
+import { Card } from "@/app/components/card";
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({ subsets: ['latin'], weight: ["300", "400", "500", "600", "700", "800", "900"] })
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    return (
+        <main className={`${poppins.className} px-8 py-20 flex flex-col items-center`}>
+            <header className={"text-center max-w-[33.75rem]"}>
+                <h1 className={"text-2xl md:text-4xl tracking-[0.01rem] md:tracking-[0.016rem] leading-[2.25rem] md:leading-[3.375rem]"}>
+                    <div className={"font-light"}>Reliable, efficient delivery</div>
+                    <div className={"font-semibold"}>Powered by Technology</div>
+                </h1>
+                <p className={"opacity-50 mt-4 text-[0.938rem] leading-[1.563rem] tracking-[0.007rem]"}>Our Artificial
+                    Intelligence powered tools use millions of project data points to ensure that your project is
+                    successful</p>
+            </header>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+            <section className={"mt-20 md:mt-16 flex flex-col md:grid md:grid-cols-3 md:grid-rows-4 gap-4 md:gap-8 max-w-[69.375rem]"}>
+                <Card header={"Supervisor"}
+                      text={"Monitors activity to identify project roadblocks"}
+                      imageUrl={"/images/icon-supervisor.svg"}
+                      variant={"green"}
+                      styles={"col-start-1 col-end-2 row-start-2 row-end-4"}
+                />
+                <Card header={"Team Builder"}
+                      text={"Scans our talent network to create the optimal team for your project"}
+                      imageUrl={"/images/icon-team-builder.svg"}
+                      variant={"red"}
+                      styles={"col-start-2 col-end-3 row-start-1 row-end-3"}
+                />
+                <Card header={"Karma"}
+                      text={"Regularly evaluates our talent to ensure quality"}
+                      imageUrl={"/images/icon-karma.svg"}
+                      variant={"orange"}
+                      styles={"col-start-2 col-end-3 row-start-3 row-end-5"}
+                />
+                <Card header={"Calculator"}
+                      text={"Uses data from past projects to provide better delivery estimates"}
+                      imageUrl={"/images/icon-calculator.svg"}
+                      variant={"blue"}
+                      styles={"col-start-3 col-end-4 row-start-2 row-end-4"}
+                />
+            </section>
+        </main>
+    )
 }
