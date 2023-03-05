@@ -11,7 +11,7 @@ export type Props = {
 
 export function Card({ text, header, imageUrl, variant, styles }: Props) {
     return (
-        <div className={clsx(`relative rounded-lg shadow-card p-7 md:p-8 flex flex-col gap-8 md:gap-10 max-w-[21.875rem] ${styles}`, {
+        <div className={clsx(`relative rounded-lg shadow-card p-7 md:p-8 flex flex-col gap-8 md:gap-10 max-w-[21.875rem] bg-white ${styles}`, {
             "card-green": variant === "green",
             "card-blue": variant === "blue",
             "card-orange": variant === "orange",
